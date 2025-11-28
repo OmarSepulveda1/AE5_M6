@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Eliminar evento</h2>
+
+<p>¿Deseas eliminar <strong>{{ object }}</strong>?</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button class="btn btn-danger">Eliminar</button>
+  <a class="btn btn-secondary ms-2" href="{% url 'eventos:listado' %}">Cancelar</a>
+</form>
+
+{% endblock %}
